@@ -120,9 +120,9 @@ function ___brainy_prompt_scm {
 
 function ___brainy_prompt_python {
 	[ "${THEME_SHOW_PYTHON}" != "true" ] && return
-	color=$_omb_prompt_bold_olive
+	color=$_omb_prompt_bold_green
 	box="[|]"
-	info="$(python_version_prompt)"
+	info="$(_omb_prompt_print_python_venv)"
 	printf "%s|%s|%s|%s" "${color}" "${info}" "${_omb_prompt_bold_navy}" "${box}"
 }
 
@@ -268,8 +268,8 @@ THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%H:%M:%S"}
 __BRAINY_PROMPT_CHAR_PS1=${THEME_PROMPT_CHAR_PS1:-">"}
 __BRAINY_PROMPT_CHAR_PS2=${THEME_PROMPT_CHAR_PS2:-"\\"}
 
-___BRAINY_TOP_LEFT=${___BRAINY_TOP_LEFT:-"user_info dir scm"}
-___BRAINY_TOP_RIGHT=${___BRAINY_TOP_RIGHT:-"python ruby todo clock battery"}
+___BRAINY_TOP_LEFT=${___BRAINY_TOP_LEFT:-"user_info python dir scm"}
+___BRAINY_TOP_RIGHT=${___BRAINY_TOP_RIGHT:-"ruby todo clock battery"}
 ___BRAINY_BOTTOM=${___BRAINY_BOTTOM:-"exitcode char"}
 
 ############
